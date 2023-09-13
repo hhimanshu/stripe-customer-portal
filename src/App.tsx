@@ -1,11 +1,11 @@
+import PricingPlans from "./components/PricingPlans"
+
 function App() {
 
   return (
-    <>
-      <h1 className="text-2xl font-medium underline">
-      Hello world!
-    </h1>
-    </>
+    <div className="bg-slate-600">
+      <PricingPlans />
+    </div>
   )
 }
 

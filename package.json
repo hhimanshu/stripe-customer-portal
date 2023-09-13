@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.0.8",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "react": "^18.2.0",
