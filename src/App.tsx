@@ -1,12 +1,12 @@
-import PricingPlans from "./components/PricingPlans"
+import PricingPlans from "./components/PricingPlans";
+import { pricePlans } from "./components/data/pricePlans";
 
 function App() {
-
   return (
     <div className="bg-slate-600">
-      <PricingPlans />
+      <PricingPlans plans={pricePlans} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
