@@ -11,6 +11,8 @@ export const getAllPrices = onRequest(async (request, response) => {
 });
 
 export const getAllProducts = onRequest(async (request, response) => {
-    const products = await stripe.products.list();
-    response.send(products);
+  const products = await stripe.products.list({
+    active: true,
+  });
+  response.send(products);
 });
