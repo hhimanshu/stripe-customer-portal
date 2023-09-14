@@ -2,24 +2,30 @@ import { useEffect, useState } from "react";
 import PricingPlans from "./components/PricingPlans";
 import {
   enterprisePlan,
-  temporaryDescriptions
+  temporaryDescriptions,
 } from "./components/data/pricePlans";
 import { PlanPrice, Price, PricingPlan, Product } from "./components/types";
 
+const API_ENDPOINT = "http://127.0.0.1:5001/stripe-cp/us-central1";
 const App = () => {
   /* const [prices, setPrices] = useState<Price[]>([]);
   const [products, setProducts] = useState<Product[]>([]); */
   const [pricingPlans, setPricingPlans] = useState<PricingPlan[]>([]);
 
+  const onClick = async () => {
+    const sessionRes = await fetch(`${API_ENDPOINT}/createSession`);
+    const result = await sessionRes.json();
+    console.log(result);
+    const url = result.session.url;
+    console.log(`redirecting to ${url}`);
+    window.open(url, '_blank');
+  };
+
   useEffect(() => {
     const getData = async () => {
-      const pricesRes = await fetch(
-        "http://127.0.0.1:5001/stripe-cp/us-central1/getPrices"
-      );
+      const pricesRes = await fetch(`${API_ENDPOINT}/getPrices`);
       const prices = (await pricesRes.json()).data as Price[];
-      const productRes = await fetch(
-        "http://127.0.0.1:5001/stripe-cp/us-central1/getProducts"
-      );
+      const productRes = await fetch(`${API_ENDPOINT}/getProducts`);
       const products = (await productRes.json()).data as Product[];
       // console.log(JSON.stringify(prices));
       // console.log(JSON.stringify(products));
@@ -64,7 +70,7 @@ const App = () => {
 
   return (
     <div className="bg-slate-600">
-      <PricingPlans plans={pricingPlans} />
+      <PricingPlans plans={pricingPlans} onClick={onClick} />
     </div>
   );
 };

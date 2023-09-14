@@ -1,9 +1,9 @@
 import { onRequest } from "firebase-functions/v2/https";
 //import * as logger from "firebase-functions/logger";
 
-
-const TEST_CUSTOMER_ID = "cus_OdZ0O03IG7Jcl4"
-const STRIPE_RESTRICTED_KEY = "sk_test_51KrSpyCDsGObPQ75Kl3laDYkrH7dPEqdXurTZCWNvmp896Nci4ZWjLQm8Bpx8OTXqEwIjLHzWhvrx3YCpQyOjI0J00yisXTzmQ"
+const TEST_CUSTOMER_ID = "cus_OdZ0O03IG7Jcl4";
+const STRIPE_RESTRICTED_KEY =
+  "sk_test_51KrSpyCDsGObPQ75Kl3laDYkrH7dPEqdXurTZCWNvmp896Nci4ZWjLQm8Bpx8OTXqEwIjLHzWhvrx3YCpQyOjI0J00yisXTzmQ";
 
 const stripe = require("stripe")(STRIPE_RESTRICTED_KEY);
 
@@ -22,7 +22,7 @@ export const getAllProducts = onRequest(async (request, response) => {
 export const createBillingSession = onRequest(async (request, response) => {
   const session = await stripe.billingPortal.sessions.create({
     customer: TEST_CUSTOMER_ID,
-    return_url: 'http://localhost:5173', // todo: change this to the actual url and based on environment (not always local)
+    return_url: "http://localhost:5173", // todo: change this to the actual url and based on environment (not always local)
   });
-  response.send(session.url);
+  response.send({ session });
 });

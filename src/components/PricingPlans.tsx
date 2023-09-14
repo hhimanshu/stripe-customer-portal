@@ -21,8 +21,9 @@ function classNames(...classes) {
 
 type PricingPlanProps = {
   plans: PricingPlan[];
+  onClick: () => void;
 };
-export default function PricingPlan({ plans }: PricingPlanProps) {
+export default function PricingPlan({ plans, onClick }: PricingPlanProps) {
   const [frequency, setFrequency] = useState(frequencies[0]);
 
   return (
@@ -100,7 +101,9 @@ export default function PricingPlan({ plans }: PricingPlanProps) {
                 >
                   {typeof tier.price === "string"
                     ? tier.price
-                    : `$${tier.price[frequency.value as keyof typeof tier.price]}`}
+                    : `$${
+                        tier.price[frequency.value as keyof typeof tier.price]
+                      }`}
                 </span>
                 {typeof tier.price !== "string" ? (
                   <span
@@ -116,7 +119,8 @@ export default function PricingPlan({ plans }: PricingPlanProps) {
                 ) : null}
               </p>
               <a
-                href={tier.href}
+                onClick={onClick}
+                //href={tier.href}
                 aria-describedby={tier.productId}
                 className={classNames(
                   tier.featured
