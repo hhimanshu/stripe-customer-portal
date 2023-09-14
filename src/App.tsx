@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import PricingPlans from "./components/PricingPlans";
 import {
   enterprisePlan,
-  pricePlans,
-  temporaryDescriptions,
+  temporaryDescriptions
 } from "./components/data/pricePlans";
 import { PlanPrice, Price, PricingPlan, Product } from "./components/types";
 
@@ -23,7 +22,7 @@ const App = () => {
       );
       const products = (await productRes.json()).data as Product[];
       // console.log(JSON.stringify(prices));
-      console.log(JSON.stringify(products));
+      // console.log(JSON.stringify(products));
 
       const plans: PricingPlan[] = [];
       products.forEach((product, index) => {
