@@ -9,7 +9,7 @@
 
 import {onRequest} from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
-import { getAllPrices, getAllProducts } from "./stripe/getAllPrices";
+import { createBillingSession, getAllPrices, getAllProducts } from "./stripe/apis";
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
@@ -21,3 +21,4 @@ export const helloWorld = onRequest((request, response) => {
 
 export const getPrices = getAllPrices;
 export const getProducts = getAllProducts;
+export const createSession = createBillingSession
