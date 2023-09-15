@@ -158,3 +158,6 @@ export default function PricingPlan({ plans, onClick }: PricingPlanProps) {
     </div>
   );
 }
+
+
+
