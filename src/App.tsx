@@ -1,4 +1,5 @@
-import StripePricingTable from "./components/PickPlan";
+import PickPlan from "./components/PickPlan";
+import StripePricingTable from "./components/StripePricingTable";
 
 const API_ENDPOINT = "http://127.0.0.1:5001/stripe-cp/us-central1";
 const App = () => {
@@ -64,7 +65,7 @@ const App = () => {
 
   return (
     <div className="bg-slate-600">
-      <StripePricingTable />
+      <PickPlan/>
     </div>
   );
 };
