@@ -2,7 +2,7 @@ import StripePricingTable from './StripePricingTable'
 
 export default function PickPlan() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-slate-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl sm:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">Pricing</h2>

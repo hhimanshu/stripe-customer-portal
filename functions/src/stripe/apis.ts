@@ -1,7 +1,7 @@
 import { onRequest } from "firebase-functions/v2/https";
 //import * as logger from "firebase-functions/logger";
 
-const TEST_CUSTOMER_ID = "cus_OdZ0O03IG7Jcl4";
+const TEST_CUSTOMER_ID = "cus_Oe0VtFlZaRWp2N";
 const STRIPE_RESTRICTED_KEY =
   "sk_test_51KrSpyCDsGObPQ75Kl3laDYkrH7dPEqdXurTZCWNvmp896Nci4ZWjLQm8Bpx8OTXqEwIjLHzWhvrx3YCpQyOjI0J00yisXTzmQ";
 
