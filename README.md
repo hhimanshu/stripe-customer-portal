@@ -25,3 +25,8 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Resources
+[How can I let my customer select a plan with the Stripe Billing Portal?](https://stackoverflow.com/questions/67605013/how-can-i-let-my-customer-select-a-plan-with-the-stripe-billing-portal)  
+[Integrate the customer portal with the API](https://stripe.com/docs/customer-management/integrate-customer-portal#redirect)  
+[Create an embeddable pricing table](https://stripe.com/docs/no-code/pricing-table)

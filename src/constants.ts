@@ -1,0 +1,1 @@
+export const API_ENDPOINT = "http://127.0.0.1:5001/stripe-cp/us-central1";
