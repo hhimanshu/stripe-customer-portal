@@ -1,8 +1,7 @@
 import { useState } from "react";
 import AppHeader, { MenuItems } from "./components/AppHeader";
-import PickPlan from "./components/PickPlan";
-import StripePricingTable from "./components/StripePricingTable";
 import ManageBiling from "./components/ManageBilling";
+import PickPlan from "./components/PickPlan";
 
 
 const App = () => {
