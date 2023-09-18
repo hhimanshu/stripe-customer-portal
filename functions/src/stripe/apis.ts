@@ -26,3 +26,10 @@ export const createBillingSession = onRequest(async (request, response) => {
   });
   response.send({ session });
 });
+
+export const createNewCustomer = onRequest(async (request, response) => {
+  const customer = await stripe.customers.create({
+    //description: 'My First Test Customer (created for API docs at https://www.stripe.com/docs/api)',
+  });
+  response.send({ customer });
+});
